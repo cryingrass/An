@@ -1,1 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Bánh Canh Cá Lóc An</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FDFBF5; /* Màu nền kem nhẹ */
+        }
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .menu-container {
+            border: 5px solid #5D4037; /* Màu nâu đậm từ logo */
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+        .menu-item .dots {
+            flex-grow: 1;
+            border-bottom: 2px dotted #D7CCC8; /* Màu chấm nâu nhạt */
+            margin: 0 0.5rem;
+            transform: translateY(-4px);
+        }
+        .section-title {
+            color: #4E342E; /* Màu nâu sẫm cho tiêu đề */
+        }
+        .price {
+            color: #BF360C; /* Màu đỏ đất cho giá */
+        }
+        /* Spinner Animation */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #4E342E;
+            animation: spin 1s ease infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
 
+    <div class="container mx-auto p-4 md:p-8 max-w-3xl">
+        <div id="menu-content" class="menu-container bg-white rounded-lg shadow-2xl p-6 md:p-10">
+            <!-- Header: Logo -->
+            <header class="text-center mb-8">
+                <img src="./Untitled design.png" alt="Logo Bánh Canh Cá Lóc An" class="w-32 h-32 md:w-40 md:h-40 mx-auto mb-4">
+                <p class="text-lg text-gray-500 italic">"Ngon & Lành"</p>
+            </header>
+            
+            <!-- Image Gallery -->
+            <div class="grid grid-cols-3 gap-2 mb-10 rounded-lg overflow-hidden">
+                <img src="./z6969263532908_0f1aac3749b8de9c51b82fef407ebc3d.jpg" alt="Món ăn hấp dẫn" class="object-cover h-32 w-full transition-transform duration-300 hover:scale-105">
+                <img src="./z6969263526232_6c300aef9c972f9cd54ab615545a1982.jpg" alt="Món ăn hấp dẫn" class="object-cover h-32 w-full transition-transform duration-300 hover:scale-105">
+                <img src="./z6969263518873_157cc8fb27ee7569d23a704c338fb8a4.jpg" alt="Món ăn hấp dẫn" class="object-cover h-32 w-full transition-transform duration-300 hover:scale-105">
+            </div>
+
+
+            <!-- AI Suggestion Button -->
+            <div class="text-center mb-10">
+                <button id="ai-suggester-btn" class="bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                    ✨ AI Gợi Ý Món Ăn ✨
+                </button>
+            </div>
+
+
+            <!-- Section: Bánh Canh / Bún -->
+            <section class="mb-10">
+                <h2 class="font-display text-3xl md:text-4xl text-center section-title mb-8">MÓN CHÍNH ĐẶC SẮC</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Card Item 1 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                        <img src="./z6969263515436_f7b4950c1ecb1745651c24d25fb4d0dc.jpg" alt="Bánh canh cá lóc hấp" class="w-full h-48 object-cover">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-semibold text-lg text-gray-900">Bánh canh/Bún cá lóc hấp</h3>
+                                <p class="font-bold text-lg price">39.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Item 2 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                        <img src="./z6969263546611_88c22286082dc979d04ec4e125aaba14.jpg" alt="Bánh canh cá lóc chiên" class="w-full h-48 object-cover">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-semibold text-lg text-gray-900">Bánh canh/Bún cá lóc chiên</h3>
+                                <p class="font-bold text-lg price">39.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Card Item 3 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                        <img src="./z6969263530445_522363d8f10ce21e5b2977f75179e391.jpg" alt="Bánh canh cá lóc đặc biệt" class="w-full h-48 object-cover">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-semibold text-lg text-gray-900">Bánh canh/Bún cá lóc đặc biệt</h3>
+                                <p class="font-bold text-lg price">55.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+                      <!-- Card Item 4 -->
+                    <div class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-in-out transform hover:-translate-y-1">
+                        <img src="./z6969263546603_084ba0d23db90601554913b03d0fcc95.jpg" alt="Bánh canh đầu cá lóc" class="w-full h-48 object-cover">
+                        <div class="p-4 bg-white">
+                            <div class="flex justify-between items-baseline">
+                                <h3 class="font-semibold text-lg text-gray-900">Bánh canh/Bún đầu cá lóc</h3>
+                                <p class="font-bold text-lg price">55.000đ</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Other items -->
+                <div class="mt-8 pt-6 border-t border-dashed border-gray-300 space-y-4">
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Bánh canh/Bún chả cá Nha Trang</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">39.000đ</span>
+                    </div>
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Bánh canh/Bún cá lóc hấp nhỏ</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">30.000đ</span>
+                    </div>
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Bánh canh/Bún cá lóc chiên nhỏ</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">30.000đ</span>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Section: Món thêm -->
+            <section class="mb-10">
+                <h2 class="font-display text-3xl md:text-4xl text-center section-title mb-6">MÓN THÊM</h2>
+                <div class="space-y-4">
+                     <!-- Menu Item -->
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Cá lóc hấp thêm</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">25.000đ</span>
+                    </div>
+                     <!-- Menu Item -->
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Cá lóc chiên thêm</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">25.000đ</span>
+                    </div>
+                     <!-- Menu Item -->
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Đầu cá lóc thêm</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">35.000đ</span>
+                    </div>
+                     <!-- Menu Item -->
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Bánh thêm</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">7.000đ</span>
+                    </div>
+                </div>
+            </section>
+
+             <!-- Section: Nước uống -->
+            <section>
+                <h2 class="font-display text-3xl md:text-4xl text-center section-title mb-6">NƯỚC UỐNG</h2>
+                <div class="space-y-4">
+                    <!-- Menu Item -->
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Pepsi</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">15.000đ</span>
+                    </div>
+                    <!-- Menu Item -->
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Sting</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">15.000đ</span>
+                    </div>
+                    <!-- Menu Item -->
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Trà xanh không độ</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">15.000đ</span>
+                    </div>
+                    <!-- Menu Item -->
+                    <div class="flex items-baseline menu-item">
+                        <span class="font-semibold text-lg text-gray-900">Nước suối</span>
+                        <span class="dots"></span>
+                        <span class="font-bold text-lg price">10.000đ</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="text-center mt-10 pt-6 border-t-2 border-dashed border-gray-300">
+                <p class="font-semibold text-gray-700">BÁNH CANH CÁ LÓC AN</p>
+                <p class="text-sm text-gray-500">Kính chúc quý khách ngon miệng!</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- AI Suggester Modal -->
+    <div id="ai-modal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-lg shadow-2xl w-full max-w-lg p-6 relative">
+             <button id="close-modal-btn" class="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
+            <h3 class="font-display text-2xl text-center section-title mb-4">Trợ lý Ẩm thực AI</h3>
+            <p class="text-center text-gray-600 mb-4">Hãy cho trợ lý biết bạn đang muốn ăn món gì hôm nay nhé!</p>
+            
+            <textarea id="user-prompt" class="w-full border border-gray-300 rounded-md p-2 h-24 mb-4 focus:ring-2 focus:ring-orange-400 focus:border-transparent" placeholder="Ví dụ: 'Hôm nay trời mưa, gợi ý cho mình món gì ấm bụng nhé' hoặc 'Mình muốn một bữa trưa nhẹ nhàng'..."></textarea>
+
+            <button id="get-suggestion-btn" class="w-full bg-gradient-to-r from-orange-500 to-red-600 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+                Nhận Gợi Ý
+            </button>
+
+            <div id="suggestion-result" class="mt-6 p-4 bg-orange-50 border-l-4 border-orange-400 rounded-r-lg min-h-[100px]">
+                <div id="loading-spinner" class="hidden justify-center items-center">
+                    <div class="spinner"></div>
+                    <p class="ml-4 text-gray-600">Trợ lý AI đang suy nghĩ...</p>
+                </div>
+                <div id="suggestion-text" class="text-gray-700"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        const aiSuggesterBtn = document.getElementById('ai-suggester-btn');
+        const aiModal = document.getElementById('ai-modal');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const getSuggestionBtn = document.getElementById('get-suggestion-btn');
+        const userPromptInput = document.getElementById('user-prompt');
+        const suggestionResult = document.getElementById('suggestion-result');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const suggestionText = document.getElementById('suggestion-text');
+
+        // Function to open the modal
+        aiSuggesterBtn.addEventListener('click', () => {
+            aiModal.classList.remove('hidden');
+        });
+
+        // Function to close the modal
+        const closeModal = () => {
+            aiModal.classList.add('hidden');
+            suggestionText.innerHTML = '';
+            userPromptInput.value = '';
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        aiModal.addEventListener('click', (event) => {
+            if (event.target === aiModal) {
+                closeModal();
+            }
+        });
+
+        // Function to extract menu text
+        const getMenuText = () => {
+            const menuContent = document.getElementById('menu-content');
+            // Clone the node to avoid modifying the original
+            const clone = menuContent.cloneNode(true);
+            // Remove the AI button from the text context
+            clone.querySelector('#ai-suggester-btn').parentElement.remove();
+            return clone.innerText;
+        };
+        
+        // Function to call Gemini API
+        const callGeminiAPI = async (userInput, menuText) => {
+            loadingSpinner.style.display = 'flex';
+            suggestionText.innerHTML = '';
+            getSuggestionBtn.disabled = true;
+
+            const apiKey = ""; // Canvas will provide the key
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+            const systemPrompt = "Bạn là một nhân viên tư vấn món ăn thân thiện và am hiểu của quán Bánh Canh Cá Lóc An. Dựa vào thực đơn được cung cấp và yêu cầu của khách hàng, hãy đưa ra một gợi ý món ăn hấp dẫn kèm theo lời giải thích ngắn gọn, thuyết phục tại sao lựa chọn đó lại phù hợp. Luôn trả lời bằng tiếng Việt, trình bày câu trả lời một cách tự nhiên và hấp dẫn.";
+            
+            const fullPrompt = `Đây là thực đơn của quán:\n\n${menuText}\n\nKhách hàng có yêu cầu sau: "${userInput}"\n\nHãy gợi ý món ăn cho họ.`;
+
+            const payload = {
+                contents: [{ parts: [{ text: fullPrompt }] }],
+                systemInstruction: {
+                    parts: [{ text: systemPrompt }]
+                },
+            };
+
+            try {
+                // Implementing exponential backoff for retries
+                let response;
+                let retries = 3;
+                let delay = 1000;
+                for (let i = 0; i < retries; i++) {
+                    response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    if (response.ok) break;
+                    await new Promise(res => setTimeout(res, delay));
+                    delay *= 2;
+                }
+
+                if (!response.ok) {
+                    throw new Error(`API call failed with status: ${response.status}`);
+                }
+
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    suggestionText.innerText = candidate.content.parts[0].text;
+                } else {
+                     suggestionText.innerText = "Xin lỗi, đã có lỗi xảy ra khi nhận gợi ý. Vui lòng thử lại sau.";
+                }
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                suggestionText.innerText = "Rất tiếc, không thể kết nối đến trợ lý AI lúc này. Bạn vui lòng thử lại sau nhé.";
+            } finally {
+                loadingSpinner.style.display = 'none';
+                getSuggestionBtn.disabled = false;
+            }
+        };
+
+        // Event listener for getting suggestion
+        getSuggestionBtn.addEventListener('click', () => {
+            const userInput = userPromptInput.value.trim();
+            if (!userInput) {
+                suggestionText.innerText = "Vui lòng cho trợ lý biết bạn muốn ăn món gì nhé!";
+                return;
+            }
+            const menuText = getMenuText();
+            callGeminiAPI(userInput, menuText);
+        });
+
+    </script>
+</body>
+</html>
